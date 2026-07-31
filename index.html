@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engenharia de Testes de Software — Um Guia Prático</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand">
+        <span class="brand-badge">QA</span>
+        <span class="brand-text">TestEngineering</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="#oque">Conceito</a>
+        <a href="#importancia">Custo de Defeitos</a>
+        <a href="#casos">Casos Reais</a>
+        <a href="#tipos">Tipos de Teste</a>
+        <a href="#quiz" class="nav-cta">Avaliar Conhecimento</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg-overlay"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-pill">
+            <span class="status-dot"></span> Guia de Arquitetura & Confiabilidade
+          </div>
+          <h1>Todo software tem bugs. Quem os descobre primeiro?</h1>
+          <p class="lead">
+            Entenda como a engenharia de testes evita falhas catastróficas, reduz custos de desenvolvimento e garante a entrega de software estável em produção.
+          </p>
+          <div class="cta-group">
+            <a href="#oque" class="btn btn-primary">Iniciar Exploração</a>
+            <a href="#quiz" class="btn btn-secondary">Ir para o Quiz</a>
+          </div>
+
+          <!-- CAROUSEL DE METRICAS / METODOLOGIAS NA PRIMEIRA TELA -->
+          <div class="hero-ticker-wrapper">
+            <div class="hero-ticker-track">
+              <!-- Item 1 -->
+              <div class="ticker-card">
+                <div class="ticker-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div>
+                  <strong>Automação CI/CD</strong>
+                  <span>Pipelines resilientes</span>
+                </div>
+              </div>
+              <!-- Item 2 -->
+              <div class="ticker-card">
+                <div class="ticker-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div>
+                  <strong>Zero-Downtime</strong>
+                  <span>Garantia de estabilidade</span>
+                </div>
+              </div>
+              <!-- Item 3 -->
+              <div class="ticker-card">
+                <div class="ticker-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </div>
+                <div>
+                  <strong>Métricas de QA</strong>
+                  <span>Cobertura de código > 90%</span>
+                </div>
+              </div>
+              <!-- Item 4 -->
+              <div class="ticker-card">
+                <div class="ticker-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <div>
+                  <strong>Shift-Left Testing</strong>
+                  <span>Prevenção desde a arquitetura</span>
+                </div>
+              </div>
+
+              <!-- DUPLICADOS PARA INFINITE SCROLL -->
+              <div class="ticker-card">
+                <div class="ticker-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div>
+                  <strong>Automação CI/CD</strong>
+                  <span>Pipelines resilientes</span>
+                </div>
+              </div>
+              <div class="ticker-card">
+                <div class="ticker-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div>
+                  <strong>Zero-Downtime</strong>
+                  <span>Garantia de estabilidade</span>
+                </div>
+              </div>
+              <div class="ticker-card">
+                <div class="ticker-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </div>
+                <div>
+                  <strong>Métricas de QA</strong>
+                  <span>Cobertura de código > 90%</span>
+                </div>
+              </div>
+              <div class="ticker-card">
+                <div class="ticker-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <div>
+                  <strong>Shift-Left Testing</strong>
+                  <span>Prevenção desde a arquitetura</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="terminal-window" aria-label="Simulação de execução de testes em terminal">
+          <div class="terminal-header">
+            <div class="terminal-actions">
+              <span class="dot close"></span>
+              <span class="dot minimize"></span>
+              <span class="dot expand"></span>
+            </div>
+            <span class="terminal-title">bash — test-suite.sh</span>
+          </div>
+          <div class="terminal-body" id="termBody">
+            <!-- Gerado via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ O QUE É ============ -->
+    <section class="section" id="oque">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Fundamentos</span>
+          <h2>O que é Teste de Software?</h2>
+          <p>
+            O teste de software é o processo disciplinado de avaliar a qualidade e a funcionalidade de uma aplicação. Não se trata de "clicar aleatoriamente", mas de validar hipóteses de comportamento esperado contra resultados reais.
+          </p>
+        </div>
+
+        <div class="code-card">
+          <div class="code-header">
+            <span class="code-filename">auth.spec.js</span>
+            <span class="code-lang">JavaScript</span>
+          </div>
+          <pre class="code-body"><code><span class="code-comment">// Um teste é uma asserção sobre o comportamento esperado da aplicação</span>
+<span class="code-kw">describe</span>(<span class="code-str">'Autenticação de Usuário'</span>, () => {
+  <span class="code-kw">it</span>(<span class="code-str">'deve bloquear o acesso quando as credenciais forem inválidas'</span>, <span class="code-kw">async</span> () => {
+    <span class="code-kw">const</span> resposta = <span class="code-kw">await</span> authService.<span class="code-fn">login</span>(<span class="code-str">'user@test.com'</span>, <span class="code-str">'senha_errada'</span>);
+    
+    <span class="code-fn">expect</span>(resposta.status).<span class="code-fn">toBe</span>(<span class="code-num">401</span>);
+    <span class="code-fn">expect</span>(resposta.authenticated).<span class="code-fn">toBe</span>(<span class="code-kw">false</span>);
+  });
+});</code></pre>
+        </div>
+
+        <div class="grid grid-3 assert-grid">
+          <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <h3>Verificação Sistemática</h3>
+            <p>Comparação precisa entre a regra de negócio definida e a resposta do código em tempo de execução.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            </div>
+            <h3>Ciclo Contínuo</h3>
+            <p>Aplica-se do levantamento de requisitos até a monitoria de saúde da aplicação em produção.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
+            </div>
+            <h3>Manual & Automação</h3>
+            <p>Combina a sensibilidade humana no design e usabilidade com a velocidade de testes robotizados repetíveis.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ IMPORTÂNCIA ============ -->
+    <section class="section section-alt" id="importancia">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Análise Econômica</span>
+          <h2>O Custo Relativo de um Defeito</h2>
+          <p>
+            A Regra de 10 de Boehm demonstra que o custo para corrigir um bug cresce exponencialmente à medida que ele avança no ciclo de vida do desenvolvimento de software.
+          </p>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-header">
+            <span class="chart-title">Multiplicador de Custo de Correção por Fase</span>
+          </div>
+          <div class="bars-container" id="costBars">
+            <div class="bar-column">
+              <span class="bar-value">1×</span>
+              <div class="bar-wrapper">
+                <div class="bar" data-height="12%"></div>
+              </div>
+              <span class="bar-label">Requisitos</span>
+            </div>
+            <div class="bar-column">
+              <span class="bar-value">6×</span>
+              <div class="bar-wrapper">
+                <div class="bar" data-height="30%"></div>
+              </div>
+              <span class="bar-label">Desenvolvimento</span>
+            </div>
+            <div class="bar-column">
+              <span class="bar-value">15×</span>
+              <div class="bar-wrapper">
+                <div class="bar" data-height="55%"></div>
+              </div>
+              <span class="bar-label">Homologação</span>
+            </div>
+            <div class="bar-column highlight">
+              <span class="bar-value">100×</span>
+              <div class="bar-wrapper">
+                <div class="bar" data-height="100%"></div>
+              </div>
+              <span class="bar-label">Produção</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-3 stat-grid">
+          <div class="stat-card">
+            <span class="stat-number">99.9%</span>
+            <h4>Confiabilidade</h4>
+            <p>Sistemas testados possuem menor índice de degradação não planejada e maior tempo de atividade.</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">10x</span>
+            <h4>Retenção de Marca</h4>
+            <p>Falhas públicas afetam a credibilidade da empresa, resultando em perda imediata de usuários e receita.</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">Zero</span>
+            <h4>Margem para Erro</h4>
+            <p>Em sistemas críticos (saúde, financeiro e aeroespacial), testes rigorosos evitam incidentes fatais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CASOS REAIS ============ -->
+    <section class="section" id="casos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Estudos de Caso</span>
+          <h2>Falhas Históricas Causadas por Bugs</h2>
+          <p>Exemplos reais de como a ausência de cobertura de testes ou validações inadequadas geraram impactos bilionários.</p>
+        </div>
+
+        <div class="grid grid-2 cases-grid">
+          <article class="case-card">
+            <div class="case-header">
+              <span class="case-tag danger">Falha de Sistema</span>
+              <span class="case-year">1996</span>
+            </div>
+            <div class="case-content">
+              <h3>Foguete Ariane 5 (Voo 501)</h3>
+              <p>O foguete destruiu-se segundos após o lançamento. Um estouro de memória ocorreu ao tentar converter um número de 64 bits para 16 bits no código do sistema de navegação.</p>
+              <div class="case-takeaway">
+                <strong>Lição:</strong> Código legado deve ser retestado integralmente quando reaproveitado em novas condições operacionais.
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-header">
+              <span class="case-tag danger">Sistemas Críticos</span>
+              <span class="case-year">1985 – 1987</span>
+            </div>
+            <div class="case-content">
+              <h3>Therac-25</h3>
+              <p>Uma falha do tipo "Condição de Corrida" (Race Condition) no software de controle da máquina de radioterapia resultou na liberação de doses letais de radiação em pacientes.</p>
+              <div class="case-takeaway">
+                <strong>Lição:</strong> Ambientes concorrentes exigem testes de concorrência e hardware em malha fechada (HIL).
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-header">
+              <span class="case-tag danger">Integração</span>
+              <span class="case-year">1999</span>
+            </div>
+            <div class="case-content">
+              <h3>Mars Climate Orbiter</h3>
+              <p>A sonda da NASA foi destruída ao entrar na atmosfera de Marte porque um módulo utilizava o sistema de unidades imperiais, enquanto o outro esperava o sistema métrico.</p>
+              <div class="case-takeaway">
+                <strong>Lição:</strong> Testes de integração entre módulos de fornecedores diferentes são fundamentais.
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-header">
+              <span class="case-tag danger">Implantação</span>
+              <span class="case-year">2012</span>
+            </div>
+            <div class="case-content">
+              <h3>Knight Capital Group</h3>
+              <p>A implantação de código não testado em um servidor ativou rotinas obsoletas. O sistema executou ordens financeiras erráticas, gerando um prejuízo de US$ 440 milhões em 45 minutos.</p>
+              <div class="case-takeaway">
+                <strong>Lição:</strong> Deploys precisam de validação e sanitização estrita do ambiente de produção real.
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TIPOS DE TESTE ============ -->
+    <section class="section section-alt" id="tipos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Taxonomia</span>
+          <h2>Níveis e Estratégias de Teste</h2>
+          <p>Nenhuma abordagem isolada é suficiente. A qualidade é construída através da sobreposição de diferentes tipos de testes.</p>
+        </div>
+
+        <div class="type-grid" id="typeGrid">
+          <!-- Renderizado via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUIZ ============ -->
+    <section class="section" id="quiz">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Avaliação</span>
+          <h2>Validação de Conhecimento</h2>
+          <p>Submeta-se ao nosso simulador de cenários de QA e avalie sua compreensão do conteúdo.</p>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-header">
+            <span class="quiz-counter" id="quizCounter">Caso 01 / 08</span>
+            <div class="quiz-progress-bar">
+              <div class="quiz-progress-fill" id="quizProgress"></div>
+            </div>
+            <span class="quiz-score-badge">Pontuação: <strong id="quizScore">0</strong></span>
+          </div>
+
+          <div id="quizArea" class="quiz-body">
+            <!-- Renderizado via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; 2026 Engenharia de Testes de Software — Documentação Técnica.</p>
+      <div class="footer-status">
+        <span class="status-indicator"></span>
+        <span>Sistema Operacional | <span id="clock">00:00:00</span> UTC</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
