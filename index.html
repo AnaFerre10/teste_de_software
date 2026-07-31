@@ -150,47 +150,34 @@
           <span class="section-tag">Fundamentos</span>
           <h2>O que é Teste de Software?</h2>
           <p>
-            O teste de software é o processo disciplinado de avaliar a qualidade e a funcionalidade de uma aplicação. Não se trata de "clicar aleatoriamente", mas de validar hipóteses de comportamento esperado contra resultados reais.
+           Fazer teste de software nada mais é do que mexer no programa, aplicativo ou site para ver se tudo funciona exatamente como deveria antes de chegar aos usuários reais.
+            Na prática, a pessoa que testa tenta usar a tela de todas as formas possíveis. Ela clica nos botões, preenche campos com dados certos e errados, tenta fazer coisas comuns propostas pelo sistema e também algumas ações aceleradas para ver como o sistema responde. O objetivo central é encontrar defeitos, travamentos ou qualquer coisa que esteja confusa para o usuário, para que a equipe de desenvolvimento possa corrigir esses impasses antes da implementação. É um trabalho de observação e cuidado para garantir que quem for usar aquela tecnologia tenha uma experiência de usuário positiva.
           </p>
         </div>
 
-        <div class="code-card">
-          <div class="code-header">
-            <span class="code-filename">auth.spec.js</span>
-            <span class="code-lang">JavaScript</span>
-          </div>
-          <pre class="code-body"><code><span class="code-comment">// Um teste é uma asserção sobre o comportamento esperado da aplicação</span>
-<span class="code-kw">describe</span>(<span class="code-str">'Autenticação de Usuário'</span>, () => {
-  <span class="code-kw">it</span>(<span class="code-str">'deve bloquear o acesso quando as credenciais forem inválidas'</span>, <span class="code-kw">async</span> () => {
-    <span class="code-kw">const</span> resposta = <span class="code-kw">await</span> authService.<span class="code-fn">login</span>(<span class="code-str">'user@test.com'</span>, <span class="code-str">'senha_errada'</span>);
-    
-    <span class="code-fn">expect</span>(resposta.status).<span class="code-fn">toBe</span>(<span class="code-num">401</span>);
-    <span class="code-fn">expect</span>(resposta.authenticated).<span class="code-fn">toBe</span>(<span class="code-kw">false</span>);
-  });
-});</code></pre>
-        </div>
+
 
         <div class="grid grid-3 assert-grid">
           <div class="card">
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
             </div>
-            <h3>Verificação Sistemática</h3>
-            <p>Comparação precisa entre a regra de negócio definida e a resposta do código em tempo de execução.</p>
+            <h3>O que é</h3>
+            <p>Testar software é usar um programa antes do lançamento para verificar se ele funciona corretamente.</p>
           </div>
           <div class="card">
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
             </div>
-            <h3>Ciclo Contínuo</h3>
-            <p>Aplica-se do levantamento de requisitos até a monitoria de saúde da aplicação em produção.</p>
+            <h3>O que faz</h3>
+            <p>A pessoa responsável clica nos botões e testa diferentes situações para encontrar erros e travamentos.</p>
           </div>
           <div class="card">
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
             </div>
-            <h3>Manual & Automação</h3>
-            <p>Combina a sensibilidade humana no design e usabilidade com a velocidade de testes robotizados repetíveis.</p>
+            <h3>Qual o objetivo</h3>
+            <p>O foco é corrigir os problemas a tempo para entregar uma experiência simples e confiável ao usuário.</p>
           </div>
         </div>
       </div>
