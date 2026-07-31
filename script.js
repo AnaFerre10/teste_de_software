@@ -57,12 +57,20 @@ function initChartObserver() {
 
 /* ============ TIPOS DE TESTE ============ */
 const tiposTeste = [
-  { path: 'unit/spec.js', name: 'Testes Unitários', desc: 'Isolam a menor unidade testável do código (funções ou métodos) para garantir saídas preditivas.' },
-  { path: 'integration/spec.js', name: 'Testes de Integração', desc: 'Avaliando a comunicação entre diferentes subsistemas, APIs e bancos de dados.' },
-  { path: 'e2e/spec.js', name: 'Testes Ponta a Ponta (E2E)', desc: 'Simulam a jornada do usuário no navegador ou dispositivo de ponta a ponta.' },
-  { path: 'regression/spec.js', name: 'Testes de Regressão', desc: 'Garantem que novas alterações não quebraram funcionalidades antigas que já funcionavam.' },
-  { path: 'performance/spec.js', name: 'Testes de Carga & Estresse', desc: 'Avaliando a estabilidade do sistema sob alto volume de requisições concorrentes.' },
-  { path: 'security/spec.js', name: 'Testes de Segurança', desc: 'Mapeamento proativo de vulnerabilidades como injeção de SQL, XSS e brechas de autenticação.' }
+  { name: 'Testes Unitários', desc: 'Testa uma parte bem pequena do código, como uma única função, para verificar se a resposta do sistema é esperada.' },
+  {  name: 'Testes de Integração', desc: 'Testa se duas ou mais partes do sistema conseguem se comunicar.' },
+  {  name: 'Testes Ponta a Ponta (E2E)', desc: 'Testa se dois ou mais dispositivos conseguem se conectar e trocar dados diretamente entre si, sem precisar de um servidor no meio.' },
+  { name: 'Testes de Regressão', desc: 'Garantem que novas alterações não quebraram funcionalidades antigas que já funcionavam.' },
+  { name: 'Testes de Carga & Estresse', desc: 'Avaliando a estabilidade do sistema sob alto volume de requisições concorrentes.' },
+  {  name: 'Testes de Segurança', desc: 'Mapeamento proativo de vulnerabilidades como injeção de SQL, XSS e brechas de autenticação.' },
+  { name: 'Testes de Aceitação', desc: 'Confirmam com o cliente se o programa realmente resolve o problema para o qual foi criado.' },
+  { name: 'Testes de Regressão', desc: 'Garantem que uma atualização nova não quebrou funcionalidades que já funcionavam antes.' },
+  { name: 'Testes de Desempenho', desc: 'Medem a velocidade do sistema e avaliam se ele suporta muitos acessos simultâneos.' },
+  { name: 'Testes de Usabilidade', desc: 'Avaliam se o sistema é fácil, intuitivo e agradável de usar por pessoas reais.' },
+  { name: 'Testes de Fumaça (Smoke)', desc: 'Verificações rápidas e básicas para garantir que o sistema não quebrou por completo.' },
+  { name: 'Testes Exploratórios', desc: 'Navegação livre e sem roteiro pelo sistema para tentar encontrar erros inesperados.' },
+  { name: 'Testes de Caixa-Preta', desc: 'Testam o programa focado apenas na tela e no uso, sem olhar o código por dentro.' },
+  { name: 'Testes de Caixa-Branca', desc: 'Testam olhando a estrutura interna do código para garantir que cada linha está correta.' }
 ];
 
 function renderTypeGrid() {
@@ -71,7 +79,6 @@ function renderTypeGrid() {
 
   grid.innerHTML = tiposTeste.map(tipo => `
     <div class="type-item">
-      <span class="type-path">${tipo.path}</span>
       <h3>${tipo.name}</h3>
       <p class="type-desc">${tipo.desc}</p>
     </div>
