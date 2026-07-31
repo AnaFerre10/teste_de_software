@@ -331,25 +331,26 @@
     </section>
 
     <!-- ============ QUIZ ============ -->
+<!-- ============ JOGO DE CONEXÃO (ARRASTAR / LIGAR) ============ -->
     <section class="section" id="quiz">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Avaliação</span>
-          <h2>Validação de Conhecimento</h2>
-          <p>Submeta-se ao nosso simulador de cenários de QA e avalie sua compreensão do conteúdo.</p>
+          <span class="section-tag">Desafio Prático</span>
+          <h2 id="matchTitle">Conecte o Problema ao Teste Certo</h2>
+          <p id="matchSub">Arraste o problema até o tipo de teste correto (ou clique no problema e depois no teste).</p>
         </div>
 
         <div class="quiz-card">
           <div class="quiz-header">
-            <span class="quiz-counter" id="quizCounter">Caso 01 / 08</span>
+            <span class="quiz-counter" id="matchCounter">Fase 1 / 2</span>
             <div class="quiz-progress-bar">
-              <div class="quiz-progress-fill" id="quizProgress"></div>
+              <div class="quiz-progress-fill" id="matchProgress"></div>
             </div>
-            <span class="quiz-score-badge">Pontuação: <strong id="quizScore">0</strong></span>
+            <span class="quiz-score-badge">Pontuação: <strong id="matchScore">0</strong></span>
           </div>
 
-          <div id="quizArea" class="quiz-body">
-            <!-- Renderizado via JS -->
+          <div id="matchArea" class="quiz-body">
+            <!-- Renderizado Dinamicamente via JS -->
           </div>
         </div>
       </div>

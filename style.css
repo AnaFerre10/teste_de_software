@@ -907,3 +907,92 @@ body {
 
 .case-nav-btn.prev { left: 8px; }
 .case-nav-btn.next { right: 8px; }
+/* ============ JOGO DE CONEXÃO (MATCH GAME) ============ */
+.match-game-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .match-game-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.match-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.match-column-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.match-card {
+  background-color: var(--bg-surface-elevated);
+  border: 1px dashed var(--border-focus);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  cursor: grab;
+  user-select: none;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  min-height: 70px;
+  font-size: 0.95rem;
+}
+
+.match-card:hover {
+  border-color: var(--primary);
+  background-color: var(--bg-surface);
+}
+
+.match-card.selected {
+  border-color: var(--warning);
+  border-style: solid;
+  background-color: rgba(245, 158, 11, 0.1);
+}
+
+.match-target {
+  background-color: var(--bg-surface-elevated);
+  border: 2px dashed var(--border-color);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.match-target.drag-over {
+  border-color: var(--primary);
+  background-color: var(--primary-muted);
+}
+
+.match-target.matched {
+  border-style: solid;
+  border-color: var(--primary);
+  background-color: var(--primary-muted);
+  color: var(--primary);
+  cursor: default;
+}
+
+.match-result-screen {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.match-result-screen h3 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
