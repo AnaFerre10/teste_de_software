@@ -146,12 +146,6 @@ body {
   border: 1px solid var(--primary);
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
 .nav-links a {
   text-decoration: none;
   color: var(--text-muted);
