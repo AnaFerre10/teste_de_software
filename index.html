@@ -1,3 +1,4 @@
+@ -1,426 +1,426 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -20,126 +21,117 @@
         <span class="brand-badge">NA</span>
         <span class="brand-text">Testes de Software</span>
       </a>
-      
     </div>
   </header>
 
   <main>
-    <!-- ============ HERO ============ -->
-    <section class="hero">
+    <!-- ============ HERO CENTRALIZADO ============ -->
+    <section class="hero hero-centered">
       <div class="hero-bg-overlay"></div>
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="status-pill">
-            <span class="status-dot"></span> Ana Ferre e Nicole Alves
-          </div>
-          <h1>Entenda o que é testes de software.</h1>
-          <p class="lead">
-            Entenda o que é teste de software, a importância de testar, exemplos práticos de sistemas que falharam e os seus tipos.
-          </p>
-          <div class="cta-group">
-            <a href="#oque" class="btn btn-primary">Iniciar Exploração</a>
-            <a href="#quiz" class="btn btn-secondary">Ir para o Quiz</a>
-          </div>
+      <div class="container hero-content-centered">
+        
+        <div class="status-pill">
+          <span class="status-dot"></span> Ana Ferre e Nicole Alves
+        </div>
+        
+        <h1>Entenda o que são testes de software.</h1>
+        
+        <p class="lead">
+          Entenda o que é um teste de software, a importância de testar, exemplos práticos de sistemas que falharam e os seus tipos.
+        </p>
+        
+        <div class="cta-group">
+          <a href="#oque" class="btn btn-primary">Iniciar Exploração</a>
+          <a href="#quiz" class="btn btn-secondary">Ir para o Teste</a>
+        </div>
 
-          <!-- CAROUSEL DE METRICAS / METODOLOGIAS NA PRIMEIRA TELA -->
-          <div class="hero-ticker-wrapper">
-            <div class="hero-ticker-track">
-              <!-- Item 1 -->
-              <div class="ticker-card">
-                <div class="ticker-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                </div>
-                <div>
-                  <strong>Automação CI/CD</strong>
-                  <span>Pipelines resilientes</span>
-                </div>
+        <!-- CAROUSEL DE METRICAS CENTRALIZADO -->
+        <div class="hero-ticker-wrapper">
+          <div class="hero-ticker-track">
+            <!-- Item 1 -->
+            <div class="ticker-card">
+              <div class="ticker-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
               </div>
-              <!-- Item 2 -->
-              <div class="ticker-card">
-                <div class="ticker-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                </div>
-                <div>
-                  <strong>Zero-Downtime</strong>
-                  <span>Garantia de estabilidade</span>
-                </div>
+              <div>
+                <strong>Testes Automáticos</strong>
+                <span>Execução rápida e contínua</span>
               </div>
-              <!-- Item 3 -->
-              <div class="ticker-card">
-                <div class="ticker-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                </div>
-                <div>
-                  <strong>Métricas de QA</strong>
-                  <span>Cobertura de código > 90%</span>
-                </div>
-              </div>
-              <!-- Item 4 -->
-              <div class="ticker-card">
-                <div class="ticker-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                </div>
-                <div>
-                  <strong>Shift-Left Testing</strong>
-                  <span>Prevenção desde a arquitetura</span>
-                </div>
-              </div>
+            </div>
 
-              <!-- DUPLICADOS PARA INFINITE SCROLL -->
-              <div class="ticker-card">
-                <div class="ticker-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                </div>
-                <div>
-                  <strong>Automação CI/CD</strong>
-                  <span>Pipelines resilientes</span>
-                </div>
+            <!-- Item 2 -->
+            <div class="ticker-card">
+              <div class="ticker-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
               </div>
-              <div class="ticker-card">
-                <div class="ticker-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                </div>
-                <div>
-                  <strong>Zero-Downtime</strong>
-                  <span>Garantia de estabilidade</span>
-                </div>
+              <div>
+                <strong>Sistema Estável</strong>
+                <span>Sem interrupções para o usuário</span>
               </div>
-              <div class="ticker-card">
-                <div class="ticker-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                </div>
-                <div>
-                  <strong>Métricas de QA</strong>
-                  <span>Cobertura de código > 90%</span>
-                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="ticker-card">
+              <div class="ticker-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
               </div>
-              <div class="ticker-card">
-                <div class="ticker-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                </div>
-                <div>
-                  <strong>Shift-Left Testing</strong>
-                  <span>Prevenção desde a arquitetura</span>
-                </div>
+              <div>
+                <strong>Qualidade Medida</strong>
+                <span>Mais de 90% do código validado</span>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="ticker-card">
+              <div class="ticker-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <div>
+                <strong>Prevenção Pró-ativa</strong>
+                <span>Erros evitados desde o início</span>
+              </div>
+            </div>
+
+            <!-- DUPLICADOS PARA INFINITE SCROLL -->
+            <div class="ticker-card">
+              <div class="ticker-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <strong>Testes Automáticos</strong>
+                <span>Execução rápida e contínua</span>
+              </div>
+            </div>
+            <div class="ticker-card">
+              <div class="ticker-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <strong>Sistema Estável</strong>
+                <span>Sem interrupções para o usuário</span>
+              </div>
+            </div>
+            <div class="ticker-card">
+              <div class="ticker-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
+              <div>
+                <strong>Qualidade Medida</strong>
+                <span>Mais de 90% do código validado</span>
+              </div>
+            </div>
+            <div class="ticker-card">
+              <div class="ticker-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <div>
+                <strong>Prevenção Pró-ativa</strong>
+                <span>Erros evitados desde o início</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="terminal-window" aria-label="Simulação de execução de testes em terminal">
-          <div class="terminal-header">
-            <div class="terminal-actions">
-              <span class="dot close"></span>
-              <span class="dot minimize"></span>
-              <span class="dot expand"></span>
-            </div>
-            <span class="terminal-title">bash — test-suite.sh</span>
-          </div>
-          <div class="terminal-body" id="termBody">
-            <!-- Gerado via JS -->
-          </div>
-        </div>
       </div>
     </section>
 
@@ -150,12 +142,10 @@
           <span class="section-tag">Fundamentos</span>
           <h2>O que é Teste de Software?</h2>
           <p>
-           Fazer teste de software nada mais é do que mexer no programa, aplicativo ou site para ver se tudo funciona exatamente como deveria antes de chegar aos usuários reais.
+            Fazer teste de software nada mais é do que mexer no programa, aplicativo ou site para ver se tudo funciona exatamente como deveria antes de chegar aos usuários reais.
             Na prática, a pessoa que testa tenta usar a tela de todas as formas possíveis. Ela clica nos botões, preenche campos com dados certos e errados, tenta fazer coisas comuns propostas pelo sistema e também algumas ações aceleradas para ver como o sistema responde. O objetivo central é encontrar defeitos, travamentos ou qualquer coisa que esteja confusa para o usuário, para que a equipe de desenvolvimento possa corrigir esses impasses antes da implementação. É um trabalho de observação e cuidado para garantir que quem for usar aquela tecnologia tenha uma experiência de usuário positiva.
           </p>
         </div>
-
-
 
         <div class="grid grid-3 assert-grid">
           <div class="card">
@@ -183,89 +173,69 @@
       </div>
     </section>
 
-    <!-- ============ IMPORTÂNCIA ============ -->
-    <section class="section section-alt" id="importancia">
+    <!-- ============ IMPORTÂNCIA DE TESTAR ============ -->
+    <section class="section" id="importance">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Análise Econômica</span>
-          <h2>O Custo Relativo de um Defeito</h2>
-          <p>
-            A Regra de 10 de Boehm demonstra que o custo para corrigir um bug cresce exponencialmente à medida que ele avança no ciclo de vida do desenvolvimento de software.
-          </p>
+          <span class="section-tag">Importância</span>
+          <h2>Qual a importância de testar?</h2>
+          <p>O teste de software não é apenas uma etapa final de verificação, mas uma prática estratégica contínua para garantir valor, confiabilidade e eficiência.</p>
         </div>
 
-        <div class="chart-card">
-          <div class="chart-header">
-            <span class="chart-title">Multiplicador de Custo de Correção por Fase</span>
+        <div class="importance-grid">
+          <div class="importance-card">
+            <div class="importance-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <h3>Prevenção de Falhas Críticas</h3>
+            <p>Identifica inconsistências e vulnerabilidades antes da implantação em produção, evitando prejuízos financeiros, vazamento de dados e impactos à reputação da empresa.</p>
           </div>
-          <div class="bars-container" id="costBars">
-            <div class="bar-column">
-              <span class="bar-value">1×</span>
-              <div class="bar-wrapper">
-                <div class="bar" data-height="12%"></div>
-              </div>
-              <span class="bar-label">Requisitos</span>
-            </div>
-            <div class="bar-column">
-              <span class="bar-value">6×</span>
-              <div class="bar-wrapper">
-                <div class="bar" data-height="30%"></div>
-              </div>
-              <span class="bar-label">Desenvolvimento</span>
-            </div>
-            <div class="bar-column">
-              <span class="bar-value">15×</span>
-              <div class="bar-wrapper">
-                <div class="bar" data-height="55%"></div>
-              </div>
-              <span class="bar-label">Homologação</span>
-            </div>
-            <div class="bar-column highlight">
-              <span class="bar-value">100×</span>
-              <div class="bar-wrapper">
-                <div class="bar" data-height="100%"></div>
-              </div>
-              <span class="bar-label">Produção</span>
-            </div>
-          </div>
-        </div>
 
-        <div class="grid grid-3 stat-grid">
-          <div class="stat-card">
-            <span class="stat-number">99.9%</span>
-            <h4>Confiabilidade</h4>
-            <p>Sistemas testados possuem menor índice de degradação não planejada e maior tempo de atividade.</p>
+          <div class="importance-card">
+            <div class="importance-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <h3>Redução de Custos de Correção</h3>
+            <p>Corrigir um erro na fase de especificação ou desenvolvimento é exponencialmente mais barato e rápido do que resolver uma falha detectada pelo cliente final.</p>
           </div>
-          <div class="stat-card">
-            <span class="stat-number">10x</span>
-            <h4>Retenção de Marca</h4>
-            <p>Falhas públicas afetam a credibilidade da empresa, resultando em perda imediata de usuários e receita.</p>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">Zero</span>
-            <h4>Margem para Erro</h4>
-            <p>Em sistemas críticos (saúde, financeiro e aeroespacial), testes rigorosos evitam incidentes fatais.</p>
+
+          <div class="importance-card">
+            <div class="importance-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <polyline points="16 11 18 13 22 9"/>
+              </svg>
+            </div>
+            <h3>Garantia da Experiência do Usuário</h3>
+            <p>Assegura que o sistema atenda aos requisitos funcionais e de usabilidade, entregando um produto fluido, intuitivo e livre de comportamentos inesperados.</p>
           </div>
         </div>
       </div>
     </section>
 
-<!-- ============ CASOS REAIS ============ -->
-<section class="section" id="casos">
-  <div class="container">
-    <div class="section-header">
-      <h2>Exemplos de sistemas que falharam em testes e não foram implantado</h2>
-      <p>Exemplos reais de como a ausência de cobertura de testes ou validações inadequadas geraram impactos.</p>
-    </div>
-
+    <!-- ============ CASOS REAIS ============ -->
+    <section class="section" id="casos">
+      <div class="container">
+        <div class="section-header">
+          <h2>Exemplos de sistemas que falharam em testes</h2>
+          <p>Exemplos reais de como a ausência de testes gera grandes impactos.</p>
+        </div>
 
         <div class="grid grid-2 cases-grid" id="casesGrid">
+          <article class="case-card">
             <div class="case-header">
               <span class="case-tag danger">Falha de Sistema</span>
               <span class="case-year">1996</span>
             </div>
             <div class="case-content">
-              <h3>Foguete Ariane 5 (Voo 501)</h3>
+              <h3>Ariane 5 (Voo 501)</h3>
               <p>O foguete destruiu-se segundos após o lançamento. Um estouro de memória ocorreu ao tentar converter um número de 64 bits para 16 bits no código do sistema de navegação.</p>
               <div class="case-takeaway">
                 <strong>Lição:</strong> Código legado deve ser retestado integralmente quando reaproveitado em novas condições operacionais.
@@ -273,6 +243,7 @@
             </div>
           </article>
 
+          <article class="case-card">
             <div class="case-header">
               <span class="case-tag danger">Sistemas Críticos</span>
               <span class="case-year">1985 – 1987</span>
@@ -286,6 +257,7 @@
             </div>
           </article>
 
+          <article class="case-card">
             <div class="case-header">
               <span class="case-tag danger">Integração</span>
               <span class="case-year">1999</span>
@@ -299,6 +271,7 @@
             </div>
           </article>
 
+          <article class="case-card">
             <div class="case-header">
               <span class="case-tag danger">Implantação</span>
               <span class="case-year">2012</span>
@@ -319,8 +292,8 @@
     <section class="section section-alt" id="tipos">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Taxonomia</span>
-          <h2>Níveis e Estratégias de Teste</h2>
+          <span class="section-tag">Tipos</span>
+          <h2>Tipos de teste</h2>
           <p>Nenhuma abordagem isolada é suficiente. A qualidade é construída através da sobreposição de diferentes tipos de testes.</p>
         </div>
 
@@ -330,28 +303,110 @@
       </div>
     </section>
 
-    <!-- ============ QUIZ ============ -->
+    <!-- ============ JOGO DE CONEXÃO ============ -->
     <section class="section" id="quiz">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Avaliação</span>
-          <h2>Validação de Conhecimento</h2>
-          <p>Submeta-se ao nosso simulador de cenários de QA e avalie sua compreensão do conteúdo.</p>
+          <span class="section-tag">Desafio Prático</span>
+          <h2 id="matchTitle">Conecte o Problema ao Teste Certo</h2>
+          <p id="matchSub">Arraste o problema até o tipo de teste correto (ou clique no problema e depois no teste).</p>
         </div>
 
         <div class="quiz-card">
           <div class="quiz-header">
-            <span class="quiz-counter" id="quizCounter">Caso 01 / 08</span>
+            <span class="quiz-counter" id="matchCounter">Fase 1 / 2</span>
             <div class="quiz-progress-bar">
-              <div class="quiz-progress-fill" id="quizProgress"></div>
+              <div class="quiz-progress-fill" id="matchProgress"></div>
             </div>
-            <span class="quiz-score-badge">Pontuação: <strong id="quizScore">0</strong></span>
+            <span class="quiz-score-badge">Pontuação: <strong id="matchScore">0</strong></span>
           </div>
 
-          <div id="quizArea" class="quiz-body">
-            <!-- Renderizado via JS -->
+          <div id="matchArea" class="quiz-body">
+            <!-- Renderizado Dinamicamente via JS -->
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ LOJA DE RECOMPENSAS ============ -->
+    <section class="section" id="store">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Recompensas</span>
+          <h2>Loja de Certificações</h2>
+          <p>Sua pontuação acumulada desbloqueia diferentes níveis de reconhecimento.</p>
+        </div>
+
+        <div class="store-grid">
+          <!-- Insígnia 1: Tente Novamente -->
+          <div class="store-card">
+            <div class="badge-preview" id="badgePreview-try">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/>
+                <path d="M21 3v5h-5"/>
+              </svg>
+              <span class="badge-tag">Nível Inicial</span>
+            </div>
+            <div class="store-card-body">
+              <h3>Participante em Testes</h3>
+              <p>Conquistada ao errar muitas tentativas ou ficar com pontuação zerada/negativa.</p>
+              <div class="store-price-container">
+                <span class="store-price-label">Pontuação necessária:</span>
+                <span class="store-price-value">0 Pontos</span>
+              </div>
+              <button id="buyBtn-try" class="btn btn-secondary btn-block" onclick="buyBadge('try', 0)">
+                Resgatar Insígnia
+              </button>
+            </div>
+          </div>
+
+          <!-- Insígnia 2: Analista -->
+          <div class="store-card">
+            <div class="badge-preview" id="badgePreview-analyst">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+              <span class="badge-tag">Nível Intermediário</span>
+            </div>
+            <div class="store-card-body">
+              <h3>Analista de QA</h3>
+              <p>Reconhecimento para quem demonstrou bom domínio dos conceitos de teste.</p>
+              <div class="store-price-container">
+                <span class="store-price-label">Pontuação necessária:</span>
+                <span class="store-price-value">400 Pontos</span>
+              </div>
+              <button id="buyBtn-analyst" class="btn btn-primary btn-block" onclick="buyBadge('analyst', 400)">
+                Resgatar Insígnia
+              </button>
+            </div>
+          </div>
+
+          <!-- Insígnia 3: Mestre -->
+          <div class="store-card">
+            <div class="badge-preview" id="badgePreview-master">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6"/>
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                <path d="m9 8 2 2 4-4"/>
+              </svg>
+              <span class="badge-tag">Nível Avançado</span>
+            </div>
+            <div class="store-card-body">
+              <h3>Mestre em Testes de Software</h3>
+              <p>Conquistada ao completar o desafio com altíssima precisão sem perder pontos.</p>
+              <div class="store-price-container">
+                <span class="store-price-label">Pontuação necessária:</span>
+                <span class="store-price-value">800 Pontos</span>
+              </div>
+              <button id="buyBtn-master" class="btn btn-primary btn-block" onclick="buyBadge('master', 800)">
+                Resgatar Insígnia
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="badgeStatus" class="badge-status-message" style="text-align: center; margin-top: 24px;"></div>
       </div>
     </section>
   </main>

@@ -1,3 +1,4 @@
+
 :root {
   --bg-main: #090d0b;
   --bg-surface: #101614;
@@ -175,23 +176,61 @@ body {
 }
 
 /* ============ HERO ============ */
+/* ============ HERO COM FUNDO AJUSTADO ============ */
 .hero {
   position: relative;
   padding: 100px 0 80px;
-  background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2000&auto=format&fit=crop');
+  
+  background: 
+    linear-gradient(180deg, rgba(9, 9, 11, 0.75) 0%, rgba(9, 9, 11, 0.95) 100%),
+    url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0 80px;
+  text-align: center;
+  background-color: #09090b; /* Cor base escura caso a imagem demore a carregar */
 }
 
+/* Camada da imagem de fundo */
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(9, 13, 11, 0.88) 0%, rgba(9, 13, 11, 0.98) 100%);
   backdrop-filter: blur(4px);
   z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Fica atrás do texto */
+  pointer-events: none; /* NÃO bloqueia cliques nos botões */
+  
+  /* Imagem temática de tecnologia/código com máscara escura suave */
+  background: 
+    linear-gradient(180deg, rgba(9, 9, 11, 0.541) 0%, rgba(9, 9, 11, 0.95) 100%),
+    url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+  
+  opacity: 0.35; /* Deixa a imagem bem sutil para não contrastar com o texto */
+  filter: blur(2px); /* Leve desfoque para focar a atenção no conteúdo */
 }
+
+/* Conteúdo principal fica sempre POR CIMA do fundo */
+.hero-content-centered {
+  position: relative;
+  z-index: 2; /* Garante prioridade visual e de clique */
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 
 .hero-grid {
   position: relative;
@@ -907,16 +946,308 @@ body {
 
 .case-nav-btn.prev { left: 8px; }
 .case-nav-btn.next { right: 8px; }
-
-.case-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
+/* ============ JOGO DE CONEXÃO (MATCH GAME) ============ */
+.match-game-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
 }
 
-.case-image-container {
-  background: #f0f0f0;
-  overflow: hidden;
-  border-radius: 12px 12px 0 0;
+@media (max-width: 768px) {
+  .match-game-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.match-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.match-column-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.match-card {
+  background-color: var(--bg-surface-elevated);
+  border: 1px dashed var(--border-focus);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  cursor: grab;
+  user-select: none;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  min-height: 70px;
+  font-size: 0.95rem;
+}
+
+.match-card:hover {
+  border-color: var(--primary);
+  background-color: var(--bg-surface);
+}
+
+.match-card.selected {
+  border-color: var(--warning);
+  border-style: solid;
+  background-color: rgba(245, 158, 11, 0.1);
+}
+
+.match-target {
+  background-color: var(--bg-surface-elevated);
+  border: 2px dashed var(--border-color);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.match-target.drag-over {
+  border-color: var(--primary);
+  background-color: var(--primary-muted);
+}
+
+.match-target.matched {
+  border-style: solid;
+  border-color: var(--primary);
+  background-color: var(--primary-muted);
+  color: var(--primary);
+  cursor: default;
+}
+
+.match-result-screen {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.match-result-screen h3 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+/* ============ LOJA DE RECOMPENSAS ============ */
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.store-card {
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.store-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.badge-preview {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px dashed var(--border-focus);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--text-dim);
+  transition: var(--transition);
+}
+
+.badge-preview.unlocked {
+  background: rgba(16, 185, 129, 0.1);
+  border: 2px solid #10b981;
+  color: #10b981;
+}
+
+.badge-tag {
+  position: absolute;
+  bottom: -8px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-dim);
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  padding: 2px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-preview.unlocked .badge-tag {
+  background-color: #10b981;
+  border-color: #10b981;
+  color: #ffffff;
+}
+
+.store-card-body h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.store-card-body p {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.store-price-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+}
+
+.store-price-label {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.store-price-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--warning, #f59e0b);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.badge-status-message {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  min-height: 20px;
+}
+
+.badge-status-message.success {
+  color: #10b981;
+}
+
+.badge-status-message.error {
+  color: var(--danger, #ef4444);
+}
+/* ============ IMPORTÂNCIA DE TESTAR ============ */
+.importance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.importance-card {
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: var(--transition);
+}
+
+.importance-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.importance-icon {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.importance-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+.importance-card p {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+/* ============ DASHBOARD HERO INOVADOR ============ */
+/* ============ HERO CENTRALIZADO ============ */
+.hero-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+.hero-content-centered {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Alinhamento dos elementos centrais */
+.hero-content-centered .status-pill {
+  margin-bottom: 20px;
+}
+
+.hero-content-centered h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero-content-centered .lead {
+  font-size: 1.15rem;
+  color: var(--text-dim, #a1a1aa);
+  max-width: 680px;
+  margin: 0 auto 32px auto;
+}
+
+.hero-content-centered .cta-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+/* Ajustes no Carrossel Ticker */
+.hero-content-centered .hero-ticker-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 10px;
 }
