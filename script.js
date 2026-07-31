@@ -118,7 +118,6 @@ const casesData = [
     year: '1990',
     title: 'GNU Hurd',
     description: 'O Projeto GNU foi criado com o intuito de substituir o Unix pelo GNU Hurd . Mais de trinta anos após o início do projeto, o GNU Hurd ainda não foi lançado como um sistema operacional funcional para uso público pois seu desenvolvimento era extremamente lento e tortuoso.',
-    takeaway: 'Código legado deve ser retestado integralmente quando reaproveitado em novas condições operacionais.',
     image: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Debian_GNU_HURD_text_mode_screenshot.png'
   },
   {
@@ -126,7 +125,7 @@ const casesData = [
     year: '2007 – 2012',
     title: 'Joost',
     description: 'Joost era um serviço de streaming de vídeo, os usuários não conseguiam acessar os programas que queriam assistir, e a maioria fechava o aplicativo depois de apenas alguns minutos.',
-    takeaway: 'Ambientes concorrentes exigem testes de concorrência e hardware em malha fechada (HIL).',
+   
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm3afvkRlnZ-27vfdGTb65LGbeX3usdzusPZanFiqTY0n0SA8JlmnIY5uU&s=10'
   },
   {
@@ -134,7 +133,7 @@ const casesData = [
     year: '2008',
     title: 'Cuil',
     description: 'O Cuil foi o concorrente da Google, tentando fazer uma pesquisa de Buscas, mas assim que foi lançado, o Cuil era muito lento, entregava resultados errados e colocava páginas irrelevantes no topo das buscas,.',
-    takeaway: 'Testes de integração entre módulos de fornecedores diferentes são fundamentais.',
+   
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9gMVlZdkcCQqvLTK6m0Zpj9Aacu6pWAN-h8R2XgaodoJAAjqrqniqS8fj&s=10'
   },
   {
@@ -142,7 +141,6 @@ const casesData = [
     year: '2007-2016',
     title: 'Windows Vista',
     description: 'O Windows Vista Projetado para substituir o antigo Windows XP em 2007, ele falhou em praticamente todos os aspectos. Era pesado e cheio de bugs, muitos aplicativos já existentes não funcionavam nele. Usuários antigos reclamavam que o sistema operacional removeram bons recursos que existiam antes.',
-    takeaway: 'Deploys precisam de validação e sanitização estrita do ambiente de produção real.',
     image: 'https://s2-techtudo.glbimg.com/gMmPD5OxJPGi2hHrrr60GacyTuk=/1200x/smart/filters:cover():strip_icc()/s.glbimg.com/po/tt2/f/original/2018/02/27/window-vista-logo-wallpaper.jpg'
   }
 ];
@@ -163,9 +161,7 @@ function renderCases() {
       <div class="case-content">
         <h3>${caseItem.title}</h3>
         <p>${caseItem.description}</p>
-        <div class="case-takeaway">
-          <strong>Lição:</strong> ${caseItem.takeaway}
-        </div>
+
       </div>
     </article>
   `).join('');
