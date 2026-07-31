@@ -215,51 +215,31 @@ function initClock() {
 const casesData = [
   {
     tag: 'Falha de Sistema',
-    year: '1996',
-    title: 'Foguete Ariane 5 (Voo 501)',
-    description: 'O foguete destruiu-se segundos após o lançamento. Um estouro de memória ocorreu ao tentar converter um número de 64 bits para 16 bits no código do sistema de navegação.',
-    takeaway: 'Código legado deve ser retestado integralmente quando reaproveitado em novas condições operacionais.',
- images: [
-'https://upload.wikimedia.org/wikipedia/commons/5/5c/Ariane_5_launch.jpg',
-'https://upload.wikimedia.org/wikipedia/commons/0/0e/Ariane_5_explosion.jpg',
-'https://upload.wikimedia.org/wikipedia/commons/9/94/Ariane_5_V501_failure.jpg'
-]
+    year: '1990',
+    title: 'GNU Hurd',
+    description: 'O Projeto GNU foi criado com o intuito de substituir o Unix pelo GNU Hurd . Mais de trinta anos após o início do projeto, o GNU Hurd ainda não foi lançado como um sistema operacional funcional para uso público pois seu desenvolvimento era extremamente lento e tortuoso.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Debian_GNU_HURD_text_mode_screenshot.png'
   },
   {
-    tag: 'Sistemas Críticos',
-    year: '1985 – 1987',
-    title: 'Therac-25',
-    description: 'Uma falha do tipo "Condição de Corrida" (Race Condition) no software de controle da máquina de radioterapia resultou na liberação de doses letais de radiação em pacientes.',
-    takeaway: 'Ambientes concorrentes exigem testes de concorrência e hardware em malha fechada (HIL).',
-    images: [
-      'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&h=400&fit=crop',
-      'https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&h=400&fit=crop',
-      'https://images.unsplash.com/photo-1530023367847-a683933f4172?w=800&h=400&fit=crop'
-    ]
+    tag: 'Falha de Sistema',
+    year: '2007 – 2012',
+    title: 'Joost',
+    description: 'Joost era um serviço de streaming de vídeo, os usuários não conseguiam acessar os programas que queriam assistir, e a maioria fechava o aplicativo depois de apenas alguns minutos.',
+    image: 'https://s2-techtudo.glbimg.com/hlRAUCwMKmH7-xB_aSMCiUsKHFw=/400x0/smart/filters:strip_icc()/s.glbimg.com/po/tt2/f/original/2014/09/11/32d086c3012d058e12313b075c91.jpeg'
   },
   {
-    tag: 'Integração',
-    year: '1999',
-    title: 'Mars Climate Orbiter',
-    description: 'A sonda da NASA foi destruída ao entrar na atmosfera de Marte porque um módulo utilizava o sistema de unidades imperiais, enquanto o outro esperava o sistema métrico.',
-    takeaway: 'Testes de integração entre módulos de fornecedores diferentes são fundamentais.',
-    images: [
-      'https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=800&h=400&fit=crop',
-      'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop',
-      'https://images.unsplash.com/photo-1506703719100-a0f3a48c0e7a?w=800&h=400&fit=crop'
-    ]
+    tag: 'Falha de Sistema',
+    year: '2008',
+    title: 'Cuil',
+    description: 'O Cuil foi o concorrente da Google, tentando fazer uma pesquisa de Buscas, mas assim que foi lançado, o Cuil era muito lento, entregava resultados errados e colocava páginas irrelevantes no topo das buscas,.',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9gMVlZdkcCQqvLTK6m0Zpj9Aacu6pWAN-h8R2XgaodoJAAjqrqniqS8fj&s=10'
   },
   {
-    tag: 'ImplAntação',
-    year: '2012',
-    title: 'Knight Capital Group',
-    description: 'A implantação de código não testado em um servidor ativou rotinas obsoletas. O sistema executou ordens financeiras erráticas, gerando um prejuízo de US$ 440 milhões em 45 minutos.',
-    takeaway: 'Deploys precisam de validação e sanitização estrita do ambiente de produção real.',
-    images: [
-      'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop',
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop',
-      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop'
-    ]
+    tag: 'Falha de Sistema',
+    year: '2007-2016',
+    title: 'Windows Vista',
+    description: 'O Windows Vista Projetado para substituir o antigo Windows XP em 2007, ele falhou em praticamente todos os aspectos. Era pesado e cheio de bugs, muitos aplicativos já existentes não funcionavam nele. Usuários antigos reclamavam que o sistema operacional removeram bons recursos que existiam antes.',
+    image: 'https://s2-techtudo.glbimg.com/gMmPD5OxJPGi2hHrrr60GacyTuk=/1200x/smart/filters:cover():strip_icc()/s.glbimg.com/po/tt2/f/original/2018/02/27/window-vista-logo-wallpaper.jpg'
   }
 ];
 
@@ -269,15 +249,8 @@ function renderCases() {
 
   grid.innerHTML = casesData.map((caseItem, index) => `
     <article class="case-card" data-case="${index}">
-      <div class="case-image-container" id="carousel-${index}">
-        <img src="${caseItem.images[0]}" alt="${caseItem.title}" class="carousel-img" data-index="0">
-        <button class="case-nav-btn prev" onclick="changeImage(${index}, -1)">‹</button>
-        <button class="case-nav-btn next" onclick="changeImage(${index}, 1)">›</button>
-        <div class="case-carousel-controls">
-          ${caseItem.images.map((_, i) => `
-            <button class="carousel-dot ${i === 0 ? 'active' : ''}" onclick="goToImage(${index}, ${i})"></button>
-          `).join('')}
-        </div>
+      <div class="case-image-container">
+        <img src="${caseItem.image}" alt="${caseItem.title}" class="case-img">
       </div>
       <div class="case-header">
         <span class="case-tag danger">${caseItem.tag}</span>
@@ -286,15 +259,13 @@ function renderCases() {
       <div class="case-content">
         <h3>${caseItem.title}</h3>
         <p>${caseItem.description}</p>
-        <div class="case-takeaway">
-          <strong>Lição:</strong> ${caseItem.takeaway}
-        </div>
       </div>
     </article>
   `).join('');
+}
 
   window.carouselStates = casesData.map((_, i) => ({ current: 0 }));
-}
+
 
 window.changeImage = function(caseIndex, direction) {
   const state = window.carouselStates[caseIndex];
