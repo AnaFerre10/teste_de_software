@@ -175,23 +175,49 @@ body {
 }
 
 /* ============ HERO ============ */
+/* ============ HERO COM FUNDO AJUSTADO ============ */
 .hero {
   position: relative;
-  padding: 100px 0 80px;
-  background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2000&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0 80px;
+  text-align: center;
+  background-color: #09090b; /* Cor base escura caso a imagem demore a carregar */
 }
 
+/* Camada da imagem de fundo */
 .hero-bg-overlay {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(9, 13, 11, 0.88) 0%, rgba(9, 13, 11, 0.98) 100%);
-  backdrop-filter: blur(4px);
-  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Fica atrás do texto */
+  pointer-events: none; /* NÃO bloqueia cliques nos botões */
+  
+  /* Imagem temática de tecnologia/código com máscara escura suave */
+  background: 
+    linear-gradient(180deg, rgba(9, 9, 11, 0.541) 0%, rgba(9, 9, 11, 0.95) 100%),
+    url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+  
+  opacity: 0.35; /* Deixa a imagem bem sutil para não contrastar com o texto */
+  filter: blur(2px); /* Leve desfoque para focar a atenção no conteúdo */
 }
+
+/* Conteúdo principal fica sempre POR CIMA do fundo */
+.hero-content-centered {
+  position: relative;
+  z-index: 2; /* Garante prioridade visual e de clique */
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 
 .hero-grid {
   position: relative;
@@ -1162,4 +1188,53 @@ body {
   font-size: 0.9rem;
   color: var(--text-dim);
   line-height: 1.5;
+}
+/* ============ DASHBOARD HERO INOVADOR ============ */
+/* ============ HERO CENTRALIZADO ============ */
+.hero-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+.hero-content-centered {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Alinhamento dos elementos centrais */
+.hero-content-centered .status-pill {
+  margin-bottom: 20px;
+}
+
+.hero-content-centered h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero-content-centered .lead {
+  font-size: 1.15rem;
+  color: var(--text-dim, #a1a1aa);
+  max-width: 680px;
+  margin: 0 auto 32px auto;
+}
+
+.hero-content-centered .cta-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+/* Ajustes no Carrossel Ticker */
+.hero-content-centered .hero-ticker-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 10px;
 }

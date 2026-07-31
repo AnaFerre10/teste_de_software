@@ -464,3 +464,61 @@ window.buyBadge = function(badgeKey, price) {
     }, 4000);
   }
 };
+function setDashboardMode(mode) {
+  const btnWith = document.getElementById('btnWithTests');
+  const btnWithout = document.getElementById('btnWithoutTests');
+  
+  const statAccuracy = document.getElementById('statAccuracy');
+  const statBugs = document.getElementById('statBugs');
+  const statTime = document.getElementById('statTime');
+  
+  const progressPercent = document.getElementById('progressPercent');
+  const progressFill = document.getElementById('progressFill');
+  
+  const statusBox = document.getElementById('dashStatusBox');
+  const statusIcon = document.getElementById('dashStatusIcon');
+  const statusTitle = document.getElementById('dashStatusTitle');
+  const statusDesc = document.getElementById('dashStatusDesc');
+
+  if (mode === 'without') {
+    btnWithout.classList.add('active');
+    btnWith.classList.remove('active');
+
+    statAccuracy.textContent = '42.0%';
+    statAccuracy.className = 'stat-value text-danger';
+    
+    statBugs.textContent = '27+';
+    statBugs.className = 'stat-value text-danger';
+    
+    statTime.textContent = '1x';
+
+    progressPercent.textContent = '12%';
+    progressFill.style.width = '12%';
+    progressFill.style.background = '#ef4444';
+
+    statusBox.classList.add('error-state');
+    statusIcon.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>`;
+    statusTitle.textContent = 'Alto Risco de Falhas Críticas';
+    statusDesc.textContent = 'Erros graves detectados no sistema por ausência de rotinas de verificação.';
+  } else {
+    btnWith.classList.add('active');
+    btnWithout.classList.remove('active');
+
+    statAccuracy.textContent = '99.8%';
+    statAccuracy.className = 'stat-value text-success';
+    
+    statBugs.textContent = '0';
+    statBugs.className = 'stat-value text-warning';
+    
+    statTime.textContent = '10x';
+
+    progressPercent.textContent = '94%';
+    progressFill.style.width = '94%';
+    progressFill.style.background = 'linear-gradient(90deg, #10b981, #3b82f6)';
+
+    statusBox.classList.remove('error-state');
+    statusIcon.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>`;
+    statusTitle.textContent = 'Ambiente Seguro e Monitorado';
+    statusDesc.textContent = 'Todas as regras de negócio foram testadas e validadas com sucesso.';
+  }
+}
