@@ -228,6 +228,7 @@ function updateCarousel(caseIndex) {
 }
 
 /* ============ JOGO DE CONEXÃO (MATCH GAME) ============ */
+/* ============ JOGO DE CONEXÃO (MATCH GAME) ============ */
 const gameLevels = [
   {
     level: 1,
@@ -316,7 +317,6 @@ function renderLevel(idx) {
   `;
 }
 
-// Funções globais expostas no window para funcionamento dos eventos HTML
 window.selectProblem = function(id) {
   document.querySelectorAll('.match-card').forEach(c => c.classList.remove('selected'));
   selectedProblemId = id;
@@ -359,6 +359,7 @@ function checkMatch(problemId, targetId) {
   if (!targetElem || !probElem || targetElem.classList.contains('matched')) return;
 
   if (problemId === targetId) {
+    // Acerto: +100 Pontos
     score += 100;
     matchedInCurrentLevel++;
     
@@ -368,7 +369,6 @@ function checkMatch(problemId, targetId) {
     probElem.style.visibility = 'hidden';
     targetElem.classList.add('matched');
     
-    // Ícone de Sucesso (Check-mark SVG)
     const icon = targetElem.querySelector('.status-icon');
     if (icon) {
       icon.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
@@ -387,6 +387,11 @@ function checkMatch(problemId, targetId) {
       }, 600);
     }
   } else {
+    // Erro: Perde 30 Pontos
+    score = Math.max(-200, score - 30); // Limite mínimo de pontuação (-200)
+    const scoreElem = document.getElementById('matchScore');
+    if (scoreElem) scoreElem.innerText = score;
+
     targetElem.style.borderColor = 'var(--danger)';
     setTimeout(() => {
       targetElem.style.borderColor = '';
@@ -411,4 +416,51 @@ window.restartGame = function() {
   currentLevelIdx = 0;
   score = 0;
   renderLevel(0);
+};
+
+/* ============ LOJA / SISTEMA DE RESGATE MULTÍPLO ============ */
+window.buyBadge = function(badgeKey, price) {
+  const statusElem = document.getElementById('badgeStatus');
+  const btn = document.getElementById(`buyBtn-${badgeKey}`);
+  const preview = document.getElementById(`badgePreview-${badgeKey}`);
+
+  if (!statusElem || !btn) return;
+
+  // Lógica especial para o "Tente Novamente" (desbloqueado se a pontuação for menor que 400)
+  if (badgeKey === 'try') {
+    btn.disabled = true;
+    btn.innerText = "Resgatado";
+    btn.classList.remove('btn-secondary');
+    btn.classList.add('btn-primary');
+    if (preview) preview.classList.add('unlocked');
+
+    statusElem.className = 'badge-status-message error';
+    statusElem.innerText = 'Insígnia "Participante" resgatada. Reinicie o desafio para tentar pontuar mais alto!';
+    return;
+  }
+
+  // Lógica de resgate por pontuação suficiente
+  if (score >= price) {
+    btn.disabled = true;
+    btn.innerText = "Resgatado";
+    btn.classList.remove('btn-primary');
+    btn.classList.add('btn-secondary');
+
+    if (preview) preview.classList.add('unlocked');
+
+    statusElem.className = 'badge-status-message success';
+    statusElem.innerText = `Parabéns! Insígnia desbloqueada com sucesso (${score} pontos).`;
+  } else {
+    // Pontuação insuficiente
+    const missingPoints = price - score;
+    statusElem.className = 'badge-status-message error';
+    statusElem.innerText = `Pontos insuficientes. Você possui ${score} pontos (necessário mais ${missingPoints} pontos).`;
+
+    setTimeout(() => {
+      if (!btn.disabled) {
+        statusElem.innerText = '';
+        statusElem.className = 'badge-status-message';
+      }
+    }, 4000);
+  }
 };
